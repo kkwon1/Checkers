@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.List;
 
 /**
- * Created by Kevin on 2015-08-24.
+ * Created by Eric on 2015-08-24.
  */
 public abstract class CheckerPiece extends JPanel {
     protected Color color;
@@ -49,6 +49,7 @@ public abstract class CheckerPiece extends JPanel {
         isKing = b;
     }
 
+    // sets the grid for this piece
     public void setGrid(Grid givenGrid) {
         if (givenGrid == null)
             grid = null;
@@ -63,7 +64,7 @@ public abstract class CheckerPiece extends JPanel {
         }
     }
 
-
+    // removes the grid from this piece
     public void removeGrid() {
         if (grid != null) {
             if (grid.hasCheckerPiece()) {

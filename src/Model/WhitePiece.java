@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Kevin on 2015-08-24.
+ * Created by Eric on 2015-08-24.
  */
 public class WhitePiece extends CheckerPiece {
 
@@ -45,6 +45,8 @@ public class WhitePiece extends CheckerPiece {
     @Override
     public Set<Grid> getLegalMoves() {
         Set<Grid> legalMoves = new HashSet<>();
+
+        // create a set of legal moves for a specific white piece
 
         int leftX = (int) this.getGrid().getGridPosition().getX() - 75;
         int rightX = (int) this.getGrid().getGridPosition().getX() + 75;

@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.List;
 
 /**
- * Created by Kevin on 2015-08-24.
+ * Created by Eric on 2015-08-24.
  */
 public class RedPiece extends CheckerPiece {
 
@@ -31,6 +31,8 @@ public class RedPiece extends CheckerPiece {
     public Set<Grid> getLegalMoves() {
 
         Set<Grid> legalMoves = new HashSet<>();
+
+        // create a set of legal moves for a specific red piece
 
         int leftX = (int) this.getGrid().getGridPosition().getX() - 75;
         int rightX = (int) this.getGrid().getGridPosition().getX() + 75;

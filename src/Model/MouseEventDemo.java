@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Created by Kevin on 2015-08-26.
+ * Created by Eric on 2015-08-26.
  */
 public class MouseEventDemo implements MouseListener {
     private Board board = Board.getInstance();
@@ -20,6 +20,9 @@ public class MouseEventDemo implements MouseListener {
         Point click = e.getPoint();
         Grid clickedGrid = board.getGridByPoint(click);
         CheckerPiece clickedPiece = clickedGrid.getPiece();
+
+        // Selects and deselects pieces depending on the user's
+        // click and state of the game.
 
         if (clickedGrid.hasCheckerPiece() && !clickedPiece.isSelected()) {
             if (clickedPiece.getColor().equals(Color.white)) {
@@ -87,6 +90,10 @@ public class MouseEventDemo implements MouseListener {
         }
 
     }
+
+    // Move the selected piece to the selected grid if and only if
+    // it is a legal move. Legal moves depend on colour of the piece
+    // and whether it is a king of not.
 
     public void moveToDestination(CheckerPiece thePiece, MouseEvent e) {
         Point click = e.getPoint();

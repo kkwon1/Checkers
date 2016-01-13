@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.List;
 
 /**
- * Created by Kevin on 2015-08-24.
+ * Created by Eric on 2015-08-24.
  */
 public class Board extends JPanel {
     private static List<CheckerPiece> checkerPieces;
@@ -18,6 +18,8 @@ public class Board extends JPanel {
     private static final Color WHITE = Color.LIGHT_GRAY;
     private static final Color BLACK = Color.black;
     private static MouseEventDemo med = new MouseEventDemo();
+
+    // Initialize the board with the correct grid colours
 
     private final Grid A1 = new Grid(WHITE, new Point(0, 0));
     private final Grid B1 = new Grid(BLACK, new Point(75, 0));
@@ -93,8 +95,10 @@ public class Board extends JPanel {
 
 
     private Board() {
+
         checkerPieces = new ArrayList<>();
 
+        // Initialize all of the Checker pieces
         CheckerPiece R1 = new RedPiece(B1);
         CheckerPiece R2 = new RedPiece(D1);
         CheckerPiece R3 = new RedPiece(F1);
@@ -121,6 +125,7 @@ public class Board extends JPanel {
         CheckerPiece W11 = new WhitePiece(E8);
         CheckerPiece W12 = new WhitePiece(G8);
 
+        // Add all checker pieces to the list that tracks the state of every piece
         checkerPieces.add(R1);
         checkerPieces.add(R2);
         checkerPieces.add(R3);
@@ -150,6 +155,7 @@ public class Board extends JPanel {
 
         allGrids = new ArrayList<Grid>();
 
+        // Add every grid to the the list that tracks the state of every grid
         allGrids.add(A1);
         allGrids.add(A2);
         allGrids.add(A3);
@@ -240,6 +246,8 @@ public class Board extends JPanel {
         return allGrids;
     }
 
+
+    // Returns the grid associated with a coordinate in the window
     public Grid getGridByPoint(Point p) {
         Grid gridToReturn = null;
 
@@ -301,7 +309,6 @@ public class Board extends JPanel {
         return panel;
     }
 
-
     public static void main(String[] args) {
         JFrame boardFrame = new JFrame();
         numRedPieces = 12;
@@ -316,11 +323,7 @@ public class Board extends JPanel {
         boardFrame.setLocationRelativeTo(null);
         boardFrame.setVisible(true);
 
-
         board.addMouseListener(med);
-
-
-
     }
 
     public void removeRedPiece() {
@@ -331,6 +334,7 @@ public class Board extends JPanel {
         numWhitePieces--;
     }
 
+    // Exits the game when the number of pieces of either colour reach 0
     public static void checkGameOver() {
         if (numRedPieces == 0) {
             JOptionPane.showMessageDialog(null, "White wins, red has no more pieces");

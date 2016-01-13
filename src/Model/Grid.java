@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kevin on 2015-08-24.
+ * Created by Eric on 2015-08-24.
  */
 public class Grid extends JPanel {
     private CheckerPiece piece;
@@ -36,7 +36,7 @@ public class Grid extends JPanel {
         return piece;
     }
 
-
+    // Given a checker piece, associate it with current grid
     public void setCheckerPiece(CheckerPiece checkerPiece) {
         if (checkerPiece == null)
             piece = null;
@@ -50,6 +50,7 @@ public class Grid extends JPanel {
         }
     }
 
+    // remove the piece from this grid
     public void removePiece() {
         if (piece != null) {
             if (piece.hasGrid()) {
