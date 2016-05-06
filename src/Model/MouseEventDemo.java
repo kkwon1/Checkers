@@ -39,7 +39,7 @@ public class MouseEventDemo implements MouseListener {
                     }
                     clickedPiece.mousePressedOnBoard(e);
                     clickedPiece.select();
-                    whiteTurn = false;
+                    //whiteTurn = false;
                 } else {
                     JOptionPane.showMessageDialog(null,"It is red's turn");
                     return;
@@ -58,7 +58,7 @@ public class MouseEventDemo implements MouseListener {
                     }
                     clickedPiece.mousePressedOnBoard(e);
                     clickedPiece.select();
-                    whiteTurn = true;
+                    //whiteTurn = true;
                 } else {
                     JOptionPane.showMessageDialog(null, "It is white's turn");
                     return;
@@ -69,13 +69,13 @@ public class MouseEventDemo implements MouseListener {
         } else if (clickedGrid.hasCheckerPiece() && clickedPiece.isSelected()) {
             clickedPiece.mousePressedOnBoard(e);
             clickedPiece.unselect();
-            whiteTurn = !whiteTurn;
         } else if (!clickedGrid.hasCheckerPiece() && !clickedGrid.isHighlighted())
             return;
 
         else if (!clickedGrid.hasCheckerPiece() && clickedGrid.isHighlighted()) {
             CheckerPiece selected = board.getSelectedPiece();
             moveToDestination(selected, e);
+            whiteTurn = !whiteTurn;
 
             if (selected.getColor().equals(Color.red)) {
                 if (selected.getGrid().getGridPosition().getY() == 525 && !selected.isKing()) {

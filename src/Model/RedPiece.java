@@ -155,6 +155,7 @@ public class RedPiece extends CheckerPiece {
                     if (!next.hasCheckerPiece())
                         next.highlight();
             }
+
         } else if (this.isSelected()) {
             for (Grid next : this.getLegalMoves()) {
                 if (next != null)
