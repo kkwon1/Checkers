@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Exceptions.OutOfBoardException;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.HashSet;
@@ -23,7 +25,11 @@ public class RedPiece extends CheckerPiece {
     }
 
     @Override
-    public void move(Grid grid) {
+    public void move(Grid grid) throws OutOfBoardException {
+        if (grid.getGridPosition().getX() < 0 || grid.getGridPosition().getX() > 525 || grid.getGridPosition().getY() < 0
+                || grid.getGridPosition().getY() > 525) {
+            throw new OutOfBoardException();
+        }
         this.setGrid(grid);
     }
 

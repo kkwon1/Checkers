@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Exceptions.OutOfBoardException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -170,7 +172,11 @@ public class MouseEventDemo implements MouseListener {
             }
         }
 
-        thePiece.setGrid(clickedGrid);
+        try {
+            thePiece.move(clickedGrid);
+        } catch (OutOfBoardException e1) {
+            e1.printStackTrace();
+        }
 
     }
 

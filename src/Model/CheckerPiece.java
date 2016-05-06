@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Exceptions.OutOfBoardException;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -75,7 +77,7 @@ public abstract class CheckerPiece extends JPanel {
     }
 
 
-    public abstract void move(Grid grid);
+    public abstract void move(Grid grid) throws OutOfBoardException;
 
     public abstract Set<Grid> getLegalMoves();
 

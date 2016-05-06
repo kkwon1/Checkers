@@ -160,7 +160,6 @@ public class Board extends JPanel {
         allGrids.add(A2);
         allGrids.add(A3);
         allGrids.add(A4);
-        allGrids.add(A4);
         allGrids.add(A5);
         allGrids.add(A6);
         allGrids.add(A7);
