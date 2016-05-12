@@ -26,8 +26,8 @@ public class RedPiece extends CheckerPiece {
 
     @Override
     public void move(Grid grid) throws OutOfBoardException {
-        if (grid.getGridPosition().getX() < 0 || grid.getGridPosition().getX() > 525 || grid.getGridPosition().getY() < 0
-                || grid.getGridPosition().getY() > 525) {
+        if (grid.getGridPosition().getX() < 0 || grid.getGridPosition().getX() > 600 || grid.getGridPosition().getY() < 0
+                || grid.getGridPosition().getY() > 600) {
             throw new OutOfBoardException();
         }
         this.setGrid(grid);
